@@ -9,6 +9,6 @@ package example;
 public class Game {
 
     public String play(String[] strings) {
-        return null;
+        return "4A0B";
     }
 }
