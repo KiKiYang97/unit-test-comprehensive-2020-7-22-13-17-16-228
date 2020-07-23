@@ -9,6 +9,6 @@ package example;
 public class RandomAnswerGenerate implements AnswerGenerate {
     @Override
     public String generate() {
-        return "1234";
+        return "2234";
     }
 }
