@@ -14,13 +14,26 @@ public class GuessNumberGameTest {
     @Test
     void should_return_4A0B_when_guess_is_1234_given_answer_is_1234(){
 //        given
-        String number = "1234";
+        String guess = "1234";
         GuessNumberGame guessNumberGame = new GuessNumberGame("1234");
 
 //        when
-        String actual = guessNumberGame.guess(number);
+        String actual = guessNumberGame.guess(guess);
 
 //        then
         assertEquals("4A0B",actual);
+    }
+
+    @Test
+    void should_return_2A2B_when_guess_is_2134_given_answer_is_1234(){
+//        given
+        String guess = "2134";
+        GuessNumberGame guessNumberGame = new GuessNumberGame("1234");
+
+//        when
+        String actual = guessNumberGame.guess(guess);
+
+//        then
+        assertEquals("2A2B",actual);
     }
 }
