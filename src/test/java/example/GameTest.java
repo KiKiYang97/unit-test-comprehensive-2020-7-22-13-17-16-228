@@ -21,7 +21,7 @@ public class GameTest {
     @Test
     void should_failed_when_inputs_over_6_times_given_list() {
         Game game = new Game();
-        String actual = game.play(new String[]{"2345", "2345", "2345", "2345", "2345", "2345", "2345"});
+        String actual = game.play(new String[]{"2134", "2134", "2134", "2134", "2134", "2134", "2134"});
         assertEquals("failed", actual);
     }
 

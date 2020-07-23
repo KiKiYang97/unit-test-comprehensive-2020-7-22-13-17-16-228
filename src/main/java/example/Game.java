@@ -9,6 +9,13 @@ package example;
 public class Game {
 
     public String play(String[] strings) {
-        return "4A0B";
+        final GuessNumberGame guessNumberGame = new GuessNumberGame(new RandomAnswerGenerate().generate());
+        for (int i = 0; i < (strings.length >= 6 ? 6 : strings.length); i++) {
+            final String guess = guessNumberGame.guess(strings[i]);
+            if (guess.equals("4A0B")) {
+                return "4A0B";
+            }
+        }
+        return "failed";
     }
 }
