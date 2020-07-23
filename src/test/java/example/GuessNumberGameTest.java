@@ -75,4 +75,17 @@ public class GuessNumberGameTest {
 //        then
         assertEquals("0A1B",actual);
     }
+
+    @Test
+    void should_return_0A0B_when_guess_is_5768_given_answer_is_1234(){
+//        given
+        String guess = "5768";
+        GuessNumberGame guessNumberGame = new GuessNumberGame("1234");
+
+//        when
+        String actual = guessNumberGame.guess(guess);
+
+//        then
+        assertEquals("0A1B",actual);
+    }
 }
