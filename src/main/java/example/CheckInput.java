@@ -8,6 +8,6 @@ package example;
  */
 public class CheckInput {
     public boolean isValid(String s) {
-        return true;
+        return false;
     }
 }
