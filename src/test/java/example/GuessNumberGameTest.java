@@ -86,6 +86,6 @@ public class GuessNumberGameTest {
         String actual = guessNumberGame.guess(guess);
 
 //        then
-        assertEquals("0A1B",actual);
+        assertEquals("0A0B",actual);
     }
 }
