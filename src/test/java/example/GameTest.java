@@ -14,11 +14,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class GameTest {
     @Test
     void should_win_when_inputs_valid_and_passed_given_list(){
-
-
-        Game game = new Game();
+       Game game = new Game();
         String actual = game.play(new String[]{"1234"}) ;
         assertEquals("4A0B",actual);
+    }
+    @Test
+    void should_failed_when_inputs_over_6_times_given_list() {
+        Game game = new Game();
+        String actual = game.play(new String[]{"2345", "2345", "2345", "2345", "2345", "2345", "2345"});
+        assertEquals("failed", actual);
     }
 
 }
