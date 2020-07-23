@@ -19,4 +19,11 @@ public class CheckInputTest {
         boolean actual = checkInput.isValid("12");
         assertEquals(false,actual);
     }
+
+    @Test
+    void should_true_when_input_has_different_number_given_check(){
+        CheckInput checkInput = new CheckInput();
+        boolean actual = checkInput.isValid("1234");
+        assertEquals(true,actual);
+    }
 }
