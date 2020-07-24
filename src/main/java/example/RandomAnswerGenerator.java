@@ -1,7 +1,6 @@
 package example;
 
 import java.util.HashSet;
-import java.util.Random;
 import java.util.Set;
 
 /**
@@ -13,18 +12,15 @@ import java.util.Set;
 public class RandomAnswerGenerator implements AnswerGenerator {
     @Override
     public String generate() {
-        //todo
-        Random random = new Random();
-        String answer = "";
-        //todo
+        StringBuilder answer = new StringBuilder();
         Set<Integer> set = new HashSet<>();
         while (answer.length()<4){
-            int number = random.nextInt(10);
+            int number = (int) (Math.random() * 10);
             if(!set.contains(number)){
                 set.add(number);
-                answer += number;
+                answer.append(number);
             }
         }
-        return answer;
+        return answer.toString();
     }
 }
