@@ -10,8 +10,7 @@ import java.util.Set;
  * @Date 22:14   2020/7/23
  * @ClassName RandomAnswerGenerate
  */
-//todo name
-public class RandomAnswerGenerate implements AnswerGenerate {
+public class RandomAnswerGenerator implements AnswerGenerator {
     @Override
     public String generate() {
         //todo

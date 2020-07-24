@@ -9,7 +9,7 @@ package example;
 public class Game {
 
     public String play(String[] strings) {
-        final GuessNumberGame guessNumberGame = new GuessNumberGame(new RandomAnswerGenerate().generate());
+        final GuessNumberGame guessNumberGame = new GuessNumberGame(new RandomAnswerGenerator().generate());
         for (int i = 0; i < (strings.length >= 6 ? 6 : strings.length); i++) {
             final String guess = guessNumberGame.guess(strings[i]);
             if (guess.equals("4A0B")) {

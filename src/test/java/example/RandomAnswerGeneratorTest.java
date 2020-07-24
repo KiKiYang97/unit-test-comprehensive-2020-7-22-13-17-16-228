@@ -13,13 +13,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @Date 22:15   2020/7/23
  * @ClassName RandomAnswerGenerateTest
  */
-public class RandomAnswerGenerateTest {
+public class RandomAnswerGeneratorTest {
     @Test
     void should_length_is_4_when_generate() {
 //        given
 //        when
-        AnswerGenerate randomAnswerGenerate = new RandomAnswerGenerate();
-        int length = randomAnswerGenerate.generate().length();
+        AnswerGenerator randomAnswerGenerator = new RandomAnswerGenerator();
+        int length = randomAnswerGenerator.generate().length();
 
 //        then
         assertEquals(4, length);
@@ -27,8 +27,8 @@ public class RandomAnswerGenerateTest {
 
     @Test
     void should_different_4_number_in_string_when_generate() {
-        AnswerGenerate randomAnswerGenerate = new RandomAnswerGenerate();
-        String actual = randomAnswerGenerate.generate();
+        AnswerGenerator randomAnswerGenerator = new RandomAnswerGenerator();
+        String actual = randomAnswerGenerator.generate();
         char[] chars = actual.toCharArray();
 
         final HashSet<Character> characters = new HashSet<>();
