@@ -70,7 +70,8 @@ public class GuessNumberGameTest {
         String actual = guessNumberGame.guess(guess);
 
 //        then
-        assertEquals("1A1B",actual);
+        assertEquals(
+                "1A1B",actual);
     }
 
     @Test

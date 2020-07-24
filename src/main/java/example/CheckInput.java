@@ -12,9 +12,9 @@ import java.util.Set;
 public class CheckInput {
     public boolean isValid(String s) {
         final char[] chars = s.toCharArray();
-        Set set = new HashSet<Character>();
-        for (int i = 0; i < chars.length ; i++) {
-            set.add(chars[i]);
+        Set<Character> set = new HashSet<>();
+        for (char aChar : chars) {
+            set.add(aChar);
         }
         return set.size()==4;
     }
