@@ -1,5 +1,9 @@
 package example;
 
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
+
 /**
  * @Author Dunka
  * @Description //TODO
@@ -9,6 +13,16 @@ package example;
 public class RandomAnswerGenerate implements AnswerGenerate {
     @Override
     public String generate() {
-        return "1234";
+        Random random = new Random();
+        String answer = "";
+        Set set = new HashSet<Integer>();
+        while (answer.length()<4){
+            int number = random.nextInt(10);
+            if(!set.contains(number)){
+                set.add(number);
+                answer += number;
+            }
+        }
+        return answer;
     }
 }
