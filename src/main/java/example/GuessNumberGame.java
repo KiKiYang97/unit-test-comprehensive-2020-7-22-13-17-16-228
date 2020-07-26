@@ -1,5 +1,8 @@
 package example;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @Author Dunka
  * @Description //TODO
@@ -8,26 +11,27 @@ package example;
  */
 public class GuessNumberGame {
     private String answer;
+
     public GuessNumberGame(String answer) {
         this.answer = answer;
     }
 
     public String guess(String guess) {
-        if(guess.equals("5768")){
-            return "0A0B";
+        Set<String> answerSet = new HashSet<>();
+        String[] split = answer.split("");
+        final String[] guessSpilt = guess.split("");
+        int countNumberAndPositionRight = 0, countNumberRight = 0;
+        for (int i = 0, j = 0; i < split.length && j < guessSpilt.length; i++, j++) {
+            answerSet.add(split[i]);
+            if (guessSpilt[j].equals(split[i])) {
+                countNumberAndPositionRight++;
+            }
         }
-        if(guess.equals("5761")){
-            return "0A1B";
+        for (String guessNum : guessSpilt) {
+            if (answerSet.contains(guessNum)) {
+                countNumberRight++;
+            }
         }
-        if(guess.equals("5731")){
-            return "1A1B";
-        }
-        if(guess.equals("4321")){
-            return "0A4B";
-        }
-        if(guess.equals("2134")){
-            return "2A2B";
-        }
-        return "4A0B";
+        return String.format("%dA%sB", countNumberAndPositionRight, countNumberRight - countNumberAndPositionRight);
     }
 }
