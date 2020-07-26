@@ -14,6 +14,9 @@ public class CheckInput {
         final char[] chars = s.toCharArray();
         Set<Character> set = new HashSet<>();
         for (char aChar : chars) {
+            if (aChar<'0'||aChar>'9'){
+                continue;
+            }
             set.add(aChar);
         }
         return set.size()==4;

@@ -19,7 +19,21 @@ public class CheckInputTest {
         boolean actual = checkInput.isValid("12");
         assertEquals(false,actual);
     }
-    //todo 1123
+
+    @Test
+    void should_false_when_input_1122_given_check(){
+
+        CheckInput checkInput = new CheckInput();
+        boolean actual = checkInput.isValid("1122");
+        assertEquals(false,actual);
+    }
+
+    @Test
+    void should_return_false_when_input_A123_given_check() {
+        CheckInput checkInput = new CheckInput();
+        boolean actual = checkInput.isValid("A123");
+        assertEquals(false,actual);
+    }
 
     @Test
     void should_true_when_input_has_different_number_given_check(){
