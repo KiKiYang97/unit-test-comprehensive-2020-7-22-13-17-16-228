@@ -11,6 +11,9 @@ import java.util.Set;
  */
 public class CheckInput {
     public boolean isValid(String s) {
+        if (s.length()!=4){
+            return false;
+        }
         final char[] chars = s.toCharArray();
         Set<Character> set = new HashSet<>();
         for (char aChar : chars) {

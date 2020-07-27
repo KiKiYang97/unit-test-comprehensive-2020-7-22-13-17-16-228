@@ -1,7 +1,5 @@
 package example;
 
-import sun.java2d.SurfaceDataProxy;
-
 import java.util.Scanner;
 
 /**
@@ -13,6 +11,7 @@ import java.util.Scanner;
 public class Game {
     private GuessNumberGame guessNumberGame;
     private Integer count;
+
     public Game(AnswerGenerator answerGenerator) {
         guessNumberGame = new GuessNumberGame(answerGenerator.generate());
         count = 6;
@@ -23,29 +22,28 @@ public class Game {
         Game game = new Game(answerGenerator);
         int i;
         boolean flag = false;
-        for (i = 0; i < game.count ; i++) {
-            Scanner scanner = new Scanner(System.in);
-            final String input = scanner.next();
+        Scanner scanner = new Scanner(System.in);
+        for (i = 0; i < game.count; i++) {
+            final String input = scanner.next().trim();
             final String guessAnswer = game.play(input);
             System.out.println(guessAnswer);
-            if (guessAnswer.equals("4A0B")){
+            if (guessAnswer.equals("4A0B")) {
                 flag = true;
                 System.out.println("win,game over");
                 break;
             }
         }
-        if(!flag){
+        if (!flag) {
             System.out.println("You only have six chances");
         }
     }
+
     public String play(String input) {
         CheckInput checkInput = new CheckInput();
-        final boolean valid = checkInput.isValid(input);
-        if(!valid) {
+        if (!checkInput.isValid(input)) {
             return "Wrong Input，Input again";
-        }else{
-            final String guess = guessNumberGame.guess(input);
-            return guess;
+        } else {
+            return guessNumberGame.guess(input);
         }
     }
 }
