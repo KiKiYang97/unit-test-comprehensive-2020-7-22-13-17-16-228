@@ -17,18 +17,18 @@ public class GuessNumberGame {
     }
 
     public String guess(String guess) {
-        Set<String> answerSet = new HashSet<>();
+        Set<String> answers = new HashSet<>();
         String[] split = answer.split("");
         final String[] guessSpilt = guess.split("");
         int countNumberAndPositionRight = 0, countNumberRight = 0;
         for (int i = 0, j = 0; i < split.length && j < guessSpilt.length; i++, j++) {
-            answerSet.add(split[i]);
+            answers.add(split[i]);
             if (guessSpilt[j].equals(split[i])) {
                 countNumberAndPositionRight++;
             }
         }
         for (String guessNum : guessSpilt) {
-            if (answerSet.contains(guessNum)) {
+            if (answers.contains(guessNum)) {
                 countNumberRight++;
             }
         }
