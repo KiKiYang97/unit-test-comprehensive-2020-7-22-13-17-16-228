@@ -16,11 +16,11 @@ public class RandomAnswerGenerator implements AnswerGenerator {
     @Override
     public String generate() {
         StringBuilder answer = new StringBuilder();
-        Set<Integer> set = new HashSet<>();
+        Set<Integer> numbers = new HashSet<>();
         while (answer.length() < ANSWER_LENGTH) {
             int number = (int) (Math.random() * 10);
-            if (!set.contains(number)) {
-                set.add(number);
+            if (!numbers.contains(number)) {
+                numbers.add(number);
                 answer.append(number);
             }
         }
